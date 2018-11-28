@@ -35,6 +35,7 @@ public class ProductStepsDef {
 	Highlighter color;
 	Actions ac;
 	List<String> porductList= new ArrayList<>();
+	
 	@Given("^User able to login successfully with valid credential$")
 	public void user_able_to_login_successfully_with_valid_credential() throws Throwable {
 		

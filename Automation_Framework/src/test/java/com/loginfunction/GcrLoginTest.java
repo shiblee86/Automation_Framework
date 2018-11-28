@@ -11,8 +11,6 @@ public class GcrLoginTest {
 WebDriver driver;
 	@Test
 	public void gettest(){
-	
-	
 		
 		GCRLogIn obj = new GCRLogIn(driver);
 		driver=obj.getLogIn();
