@@ -17,6 +17,8 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import com.generic.library.BaseGCRLogin;
 import com.generic.library.GCRLogIn;
@@ -35,6 +37,8 @@ public class ProductStepsDef {
 	Highlighter color;
 	Actions ac;
 	List<String> porductList= new ArrayList<>();
+	
+	@BeforeTest
 	@Given("^User able to login successfully with valid credential$")
 	public void user_able_to_login_successfully_with_valid_credential() throws Throwable {
 		
@@ -44,7 +48,8 @@ public class ProductStepsDef {
 		color = new Highlighter(driver);
 		ac= new Actions(driver);
 	}
-
+	
+	@Test
 	@Given("^Click the catalog link$")
 	public void click_the_catalog_link() throws Throwable {
 		color.drawBorder(pf.getCatalogBtn(), "red");
@@ -54,7 +59,7 @@ public class ProductStepsDef {
 		
 		
 	}
-
+	@Test
 	@Given("^Click new product link$")
 	public void click_new_product_link() throws Throwable {
 		color.drawBorder(pf.getNewProductblink(), "bule");
@@ -62,7 +67,7 @@ public class ProductStepsDef {
 		System.out.println("Clicked new product link");
 		
 	}
-
+	@Test
 	@When("^Check total product count and check current page number$")
 	public void check_total_product_count_and_check_current_page_number() throws Throwable {
 	 
@@ -79,7 +84,7 @@ public class ProductStepsDef {
 		Thread.sleep(3000);
 		
 	}
-
+	@Test
 	@When("^Find out all product name with total count in page one and page two$")
 	public void find_out_all_product_name_with_total_count_in_page_one_and_page_two() throws Throwable {   
 		
@@ -106,7 +111,7 @@ public class ProductStepsDef {
 		System.out.println(porductList);
 		 System.out.println("-----------------------------------------------------");
 	}
-
+	@Test
 	@When("^Remove all duplicate value from the list$")
 	public void remove_all_duplicate_value_from_the_list() throws Throwable {
 	    
@@ -126,7 +131,7 @@ public class ProductStepsDef {
 		
 	}
 
-	
+	@Test
 	@When("^Show only duplicate product$")
 	public void show_only_duplicate_product() throws Throwable {
 		 List<String> duplicates =    porductList.stream().filter(d -> Collections.frequency(porductList, d) > 1).distinct().collect(Collectors.toList());
@@ -137,6 +142,7 @@ public class ProductStepsDef {
 		 System.out.println("-----------------------------------------------------");
 			
 	}
+	@Test
 	@When("^Find out how many shampoo in the list and each items count$")
 	public void find_out_how_many_shampoo_in_the_list_and_each_items_count() throws Throwable {
 		
@@ -158,6 +164,7 @@ public class ProductStepsDef {
 		 
 	}
 
+	@Test
 	
 	@Then("^Add one shampoo to cart$")
 	public void add_one_shampoo_to_cart() throws Throwable {

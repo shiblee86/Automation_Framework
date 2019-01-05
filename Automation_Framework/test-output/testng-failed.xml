@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.stepdef.dsadasd">
+      <class name="com.usa.ttech.practicecode.DropDownMenu">
         <methods>
-          <include name="gettest"/>
+          <include name="getdropDwon"/>
         </methods>
-      </class> <!-- com.stepdef.dsadasd -->
+      </class> <!-- com.usa.ttech.practicecode.DropDownMenu -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
